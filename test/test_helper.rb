@@ -6,10 +6,16 @@ require "minitest/autorun"
 
 class ActiveSupport::TestCase
   def before_setup
+    key       = nil
+    secret    = nil
+    shop_code = nil
+    if key.nil? || secret.nil? || shop_code.nil?
+
+    end
     Baison::Base.params = Baison::Params.new(
-        '616623385f5e6a171af55ed73c217c6c',
-        '062e2fdef023d220dc4dfe22ebca922a',
-        'ht016'
+        key,
+        secret,
+        shop_code
     )
   end
 end
