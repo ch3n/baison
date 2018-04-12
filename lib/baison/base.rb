@@ -44,10 +44,10 @@ module Baison
 
 
       protected
-      def find(options)
-        a    = Array.new
-        json = connection.post(self.class.resource, options)
 
+      def find(options)
+        a = Array.new
+        json = connection.post(self.resource, options)
         begin
           data = json['data']['data']
         rescue

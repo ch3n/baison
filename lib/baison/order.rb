@@ -3,7 +3,8 @@ module Baison
     attr_accessor :sell_record_code, :order_status, :shipping_status,
                   :receiver_name, :receiver_address, :receiver_mobile,
                   :express_code, :express_no, :delivery_time,
-                  :deal_code_list
+                  :deal_code_list,
+                  :receiver_province
 
     attr_reader :detail_list
 
