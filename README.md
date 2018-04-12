@@ -24,11 +24,16 @@ gem 'baison'
 ### 初始化
 
 设定 key secret shop_code
+```ruby
 Baison::Base.params = Baison::Params.new(key,secret,shop_code)
+```
 
 ### 商品
+```ruby
 Baison::Product.find_all({page:1,page_size:100,lastchanged_start:'2018-04-01 00:00:00'})
+
 Baison::Product.find_one({barcode: '1234567'})
+```
 efast 接口 prm.goods.list
 
 
@@ -44,15 +49,23 @@ efast 接口 prm.goods.list
 库存默认使用“计算库存”，即根据百胜系统运营策略得到的可用库存数
 每个 Baison::Sku 都有 stock 熟悉，返回一个 Baison::Stock
 也可以通过 barcode 自己查询库存
+```ruby
 Baison::Stock.find_all({barcode: '123456789'})
+
 Baison::Stock.find_all({start_time: '2018-04-01 00:00:00'})
+```
 efast 接口 prm.goods.shop.inv
 
 
 ### 订单查询
+```ruby
 Baison::Order.find_one({deal_code: '123456'})
+
 Baison::Order.find_all({deal_code: 1,shipping_status: 0})
+
 Baison::Order 的属性 details 为 Baison::OrderDetail
+
+```
 efast 接口 oms.order.search.get
 
 ### 创建订单
