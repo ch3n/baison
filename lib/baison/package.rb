@@ -7,7 +7,7 @@ module Baison
     attr_writer :goods_num
 
     validates :shop_code, :status, :receiver_province, :receiver_city, :receiver_district, :receiver_addr, :receiver_name,
-              :pay_type, :pay_time, :receiver_mobile, :deal_code, :buyer_remark, :buyer_name,
+              :pay_type, :pay_time, :receiver_mobile, :deal_code, :buyer_name,
               :record_time, :order_money, :goods_num, :detail, presence: true
 
 
