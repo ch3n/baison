@@ -48,7 +48,7 @@ module Baison
       def find(options)
         a = Array.new
         json = connection.post(self.resource, options)
-        if json['status'] != '1'
+        if json['status'].to_s != '1'
           raise ::StandardError.new(json)
         end
         begin
