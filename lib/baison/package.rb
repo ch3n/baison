@@ -44,7 +44,6 @@ module Baison
       json          = self.as_json
       json.merge!(detail: detail.as_json.to_json.to_s)
       json = self.class.connection.post(self.resource, json)
-      pp json
       unless json["status"] == 1
         if json["data"].is_a? Array
           json["data"].each do |item|
