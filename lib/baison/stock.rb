@@ -6,7 +6,7 @@ module Baison
     class << self
       def find(args)
         self.resource = "prm.goods.shop.inv"
-        args.merge!({start_time: '1989-03-26 00:00:00', page_size: 100})
+        args.merge!({page_size: 100})
         super(args) do |data|
           array = []
           data.values.each do |v|
