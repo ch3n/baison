@@ -6,9 +6,9 @@ require "minitest/autorun"
 
 class ActiveSupport::TestCase
   def before_setup
-    key       = nil
-    secret    = nil
-    shop_code = nil
+    key       = ''
+    secret    = ''
+    shop_code = ''
     if key.nil? || secret.nil? || shop_code.nil?
 
     end
