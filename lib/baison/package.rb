@@ -43,7 +43,9 @@ module Baison
       self.resource = 'oms.api.order.add'
       json          = self.as_json
       json.merge!(detail: detail.as_json.to_json.to_s)
+      pp json if ENV.fetch('BAISON_VERBOSE', false)
       json = self.class.connection.post(self.resource, json)
+      pp json if ENV.fetch('BAISON_VERBOSE', false)
       unless json["status"] == 1
         if json["data"].is_a? Array
           json["data"].each do |item|
